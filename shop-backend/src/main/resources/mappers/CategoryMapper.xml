@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.CategoryMapper">
+    <select id="getProductCountByCategory" resultType="java.util.Map">
+        SELECT category.id, category.`name`, COUNT(*) AS product_count
+        FROM food
+        LEFT JOIN category ON food.category_id = category.id
+        GROUP BY food.category_id;
+    </select>
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.ProductMapper">
+    <insert id="addProduct">
+        insert into food
+        values (#{product.id},#{product.categoryId},
+                #{product.name},#{product.price},
+                #{product.imageUrl},#{product.status},
+                #{product.createTime},#{product.updateTime},
+                #{product.deleteTime})
+    </insert>
+
+    <update id="updateById">
+        update
+        food
+        set category_id=#{product.categoryId},
+            name=#{product.name},price=#{product.price},
+            image_url=#{product.imageUrl},
+            status=#{product.status},
+            create_time=#{product.createTime},
+            update_time=#{product.updateTime},
+            delete_time=#{product.deleteTime}
+        where id = #{product.id}
+    </update>
+
+    <delete id="deleteById">
+        delete from food where id = #{id}
+    </delete>
+
+    <select id="getAllProducts" resultType="com.model.entity.Product">
+        select * from food
+    </select>
+
+    <select id="getProductByName" resultType="com.model.entity.Product">
+        select * from food where name like "%"#{name}"%"
+    </select>
+</mapper>
