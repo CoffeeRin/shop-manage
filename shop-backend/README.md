@@ -9,7 +9,7 @@ source online_class.sql
 （1）前端使用vant v2
 https://vant-contrib.gitee.io/vant/v2/#/zh-CN/home
 (2)前后端分离
-前端端口：80  后端端口：8089
+前端端口：8080  后端端口：8089
 （3）跨域
 https://blog.csdn.net/oYiQiYi1/article/details/123863405
         //表示接受任意域名的请求,也可以指定域名
@@ -31,10 +31,4 @@ http://www.proyy.com/6962037031799095327.html
                 <component :is='item.component'>
                 </component>
 
-```
-
-# 考虑增加的功能
-```
-（1）登录界面增加验证码
-（2）购买记录增加删除按钮
 ```
